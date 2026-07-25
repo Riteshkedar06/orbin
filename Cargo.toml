@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "apps/orbin-cli",
+
+    "crates/orbin-core",
+    "crates/orbin-ui",
+    "crates/orbin-platform",
+    "crates/orbin-config",
+    "crates/orbin-plugin-api",
+    "crates/orbin-utils",
+]
