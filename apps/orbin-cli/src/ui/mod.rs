@@ -1,17 +1,16 @@
-use ratatui::{
-    Frame,
-    layout::Alignment,
-    widgets::{Block, Borders, Paragraph},
-};
+mod content;
+mod footer;
+mod header;
+mod layout;
+mod sidebar;
+
+use ratatui::Frame;
 
 pub fn render(frame: &mut Frame) {
-    let area = frame.area();
+    let shell = layout::build(frame.area());
 
-    let block = Block::default().title(" Orbin ").borders(Borders::ALL);
-
-    let welcome = Paragraph::new("Welcome to Orbin")
-        .block(block)
-        .alignment(Alignment::Center);
-
-    frame.render_widget(welcome, area);
+    header::render(frame, shell.header);
+    sidebar::render(frame, shell.sidebar);
+    content::render(frame, shell.content);
+    footer::render(frame, shell.footer);
 }
