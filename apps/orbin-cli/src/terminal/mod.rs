@@ -1,3 +1,3 @@
 mod setup;
 
-pub use setup::{OrbinTerminal, TerminalGuard};
+pub use setup::TerminalGuard;

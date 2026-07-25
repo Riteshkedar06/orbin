@@ -1,15 +1,19 @@
+use crate::app::state::App;
+
 use ratatui::{
-    layout::Alignment,
+    layout::{Alignment, Rect},
     widgets::{Block, Borders, Paragraph},
     Frame,
 };
 
-pub fn render(frame: &mut Frame, area: ratatui::layout::Rect) {
-    let content = Paragraph::new(
-        "Welcome to Orbin\n\nLinux Operations Workspace",
-    )
-    .alignment(Alignment::Center)
-    .block(Block::default().borders(Borders::ALL));
+pub fn render(frame: &mut Frame, area: Rect, app: &App) {
+    let content = Paragraph::new(app.screen().title())
+        .alignment(Alignment::Center)
+        .block(
+            Block::default()
+                .title("Content")
+                .borders(Borders::ALL),
+        );
 
     frame.render_widget(content, area);
 }
