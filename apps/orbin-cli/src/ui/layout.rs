@@ -1,6 +1,4 @@
-use ratatui::{
-    layout::{Constraint, Direction, Layout, Rect},
-};
+use ratatui::layout::{Constraint, Direction, Layout, Rect};
 
 pub struct ShellLayout {
     pub header: Rect,
@@ -22,7 +20,7 @@ pub fn build(area: Rect) -> ShellLayout {
     let middle = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([
-            Constraint::Length(18),
+            Constraint::Length(20),
             Constraint::Min(1),
         ])
         .split(vertical[1]);

@@ -28,4 +28,12 @@ impl App {
     pub fn set_screen(&mut self, screen: Screen) {
         self.current_screen = screen;
     }
+
+    pub fn next_screen(&mut self) {
+        self.current_screen = self.current_screen.next();
+    }
+
+    pub fn previous_screen(&mut self) {
+        self.current_screen = self.current_screen.previous();
+    }
 }

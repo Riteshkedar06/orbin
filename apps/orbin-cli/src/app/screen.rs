@@ -34,4 +34,34 @@ impl Screen {
             Screen::Settings => "Settings",
         }
     }
+
+    pub fn next(self) -> Self {
+        use Screen::*;
+
+        match self {
+            Dashboard => Processes,
+            Processes => Logs,
+            Logs => Services,
+            Services => Network,
+            Network => Alerts,
+            Alerts => Cases,
+            Cases => Settings,
+            Settings => Dashboard,
+        }
+    }
+
+    pub fn previous(self) -> Self {
+        use Screen::*;
+
+        match self {
+            Dashboard => Settings,
+            Processes => Dashboard,
+            Logs => Processes,
+            Services => Logs,
+            Network => Services,
+            Alerts => Network,
+            Cases => Alerts,
+            Settings => Cases,
+        }
+    }
 }
