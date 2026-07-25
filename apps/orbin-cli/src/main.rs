@@ -17,9 +17,7 @@ fn main() -> Result<()> {
     let mut app = App::new();
 
     while app.running() {
-        terminal
-            .terminal()
-            .draw(|frame| ui::render(frame))?;
+        terminal.terminal().draw(|frame| ui::render(frame))?;
 
         if event::poll(Duration::from_millis(100))? {
             if let Event::Key(key) = event::read()? {
