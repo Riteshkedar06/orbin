@@ -1,8 +1,4 @@
-use ratatui::{
-    layout::Alignment,
-    widgets::Paragraph,
-    Frame,
-};
+use ratatui::{Frame, layout::Alignment, widgets::Paragraph};
 
 pub fn render(frame: &mut Frame, area: ratatui::layout::Rect) {
     let header = Paragraph::new(" Orbin                               localhost ")

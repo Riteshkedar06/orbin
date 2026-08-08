@@ -25,9 +25,9 @@ impl App {
         self.current_screen
     }
 
-    pub fn set_screen(&mut self, screen: Screen) {
-        self.current_screen = screen;
-    }
+    // pub fn set_screen(&mut self, screen: Screen) {
+    //     self.current_screen = screen;
+    // }
 
     pub fn next_screen(&mut self) {
         self.current_screen = self.current_screen.next();

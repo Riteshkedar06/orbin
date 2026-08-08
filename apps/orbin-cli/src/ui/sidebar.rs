@@ -1,14 +1,6 @@
-use crate::app::{
-    screen::Screen,
-    state::App,
-};
+use crate::app::{screen::Screen, state::App};
 
-use ratatui::{
-    layout::Rect,
-    text::Line,
-    widgets::Paragraph,
-    Frame,
-};
+use ratatui::{Frame, layout::Rect, text::Line, widgets::Paragraph};
 
 pub fn render(frame: &mut Frame, area: Rect, app: &App) {
     let lines: Vec<Line> = Screen::ALL

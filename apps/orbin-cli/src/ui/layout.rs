@@ -19,10 +19,7 @@ pub fn build(area: Rect) -> ShellLayout {
 
     let middle = Layout::default()
         .direction(Direction::Horizontal)
-        .constraints([
-            Constraint::Length(20),
-            Constraint::Min(1),
-        ])
+        .constraints([Constraint::Length(20), Constraint::Min(1)])
         .split(vertical[1]);
 
     ShellLayout {

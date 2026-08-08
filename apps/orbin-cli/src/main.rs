@@ -17,14 +17,12 @@ fn main() -> Result<()> {
     let mut app = App::new();
 
     while app.running() {
-        terminal
-            .terminal()
-            .draw(|frame| ui::render(frame, &app))?;
+        terminal.terminal().draw(|frame| ui::render(frame, &app))?;
 
-        if event::poll(Duration::from_millis(100))? {
-            if let Event::Key(key) = event::read()? {
-                events::handle_key(&mut app, key);
-            }
+        if event::poll(Duration::from_millis(100))?
+            && let Event::Key(key) = event::read()?
+        {
+            events::handle_key(&mut app, key);
         }
     }
 
